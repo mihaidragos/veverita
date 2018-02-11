@@ -8,6 +8,7 @@ let defaultStyle = {
   color: '#a90585'
 }
 
+
 let fakeServerData = {
   user: {
     name: 'Iulia',
@@ -110,7 +111,7 @@ class App extends Component {
   componentDidMount() {
     setTimeout (() => {
       this.setState({serverData: fakeServerData})
-    }, 2000) ;
+    }, 1000) ;
   }
 
   render() {
