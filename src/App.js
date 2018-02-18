@@ -9,6 +9,7 @@ let defaultStyle = {
   color: '#a90585'
 }
 
+
 let fakeServerData = {
   user: {
     name: 'Iulia',
