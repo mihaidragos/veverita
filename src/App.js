@@ -123,6 +123,7 @@ class App extends Component {
   }
 
   render() {
+<<<<<<< HEAD
     let playlistToRender = 
     this.state.user && 
     this.state.playlists
@@ -130,6 +131,11 @@ class App extends Component {
           playlist.name.toLowerCase().includes(
         this.state.filterString.toLowerCase())) 
       : []
+=======
+    let name = 'Iulia'
+    let green = '#f43533'
+    let headerStyle = {color: 'red', 'font-size': '50px'}
+>>>>>>> parent of 82062b1... Filter applies to all data
     return (
       <div className="App">
         {this.state.user ?
@@ -137,6 +143,7 @@ class App extends Component {
             <h1 style={{...defaultStyle, 'font-size': '54px'}}>
               {this.state.user.name}'s Blog
             </h1>
+<<<<<<< HEAD
             {this.state.user.playlists &&
             <div>
               <PlaylistCounter playlists={playlistToRender}/>
@@ -150,6 +157,19 @@ class App extends Component {
             </div>}
           </div> : <button onClick={() => window.location='http://localhost:8888/login'}
             style={{'padding': '20px', 'font-size': '50px', 'margin-top': '20px'}}>Sign in with spotify</button>
+=======
+            <PlaylistCounter playlists={this.state.serverData.user.playlists}/>
+            <HoursCounter  playlists={this.state.serverData.user.playlists}/>
+            <Filter onTextChange={text => 
+              this.setState({filterString: text})
+            }/>
+            {this.state.serverData.user.playlists.filter(
+              playlist => playlist.name.toLowerCase().includes(this.state.filterString.toLowerCase())
+            ).map(
+              playlist => <Playlist playlist={playlist}/>
+            )}
+          </div> : <h1 style={{...defaultStyle}}>Loading...</h1>
+>>>>>>> parent of 82062b1... Filter applies to all data
         }
       </div>
     );
